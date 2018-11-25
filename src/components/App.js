@@ -13,6 +13,7 @@ class App extends React.Component {
         type: 'all'
       }
     }
+      }
     onChangeType=(newType){
       this.setState({  ...this.state.filters,
       type: newType
@@ -36,7 +37,7 @@ class App extends React.Component {
       });
       this.setState({ pets });
     };
-  }
+
 
   render() {
     return (
