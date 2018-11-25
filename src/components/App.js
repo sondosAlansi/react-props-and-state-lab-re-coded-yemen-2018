@@ -17,7 +17,7 @@ class App extends React.Component {
       this.setState({  ...this.state.filters,
       type: newType
     })
-    
+
 
     }
     onFindPetsClick = () => {
@@ -29,6 +29,12 @@ class App extends React.Component {
       url += `?type=${this.state.filters.type}`;
       fetch(url).then(res => res.json()).then(pets => this.setState({ pets }))
     }
+    };
+    onAdoptPet = (id) => {
+      const pets = this.state.pets.map(pet => {
+        return pet.id === id ? { ...pet, isAdopted: true } : pet;
+      });
+      this.setState({ pets });
     };
   }
 
