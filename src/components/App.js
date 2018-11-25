@@ -14,7 +14,7 @@ class App extends React.Component {
       }
     }
       }
-    onChangeType=(newType){
+    onChangeType=(newType)=>{
       this.setState({  ...this.state.filters,
       type: newType
     })
